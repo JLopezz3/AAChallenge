@@ -13,6 +13,16 @@ import Link from "@material-ui/core/Link";
 import Logo from "../../assets/American_Airlines-Logo.png";
 import Airplane from "../../assets/Airplane.svg";
 
+import CovidInfo from "../../components/CovidInfo/CovidInfo";
+
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+
+import Hollywood from "../../assets/Hollywood.jpg";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -58,19 +68,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     marginBottom: theme.spacing(20),
   },
-  button: {
-    background: "#000000",
-    color: "#FFFFFF",
-    width: "20%",
-    borderRadius: "10px",
-    "&:hover, &.Mui-focusVisible": {
-      transition: "0.3s",
-      color: "#000000",
-      backgroundColor: "#FFB800",
-    },
-    fontFamily: "Oleo Script",
-    fontSize: "18px",
-  },
   pic: {
     backgroundRepeat: "no-repeat",
     height: "30vh",
@@ -80,6 +77,29 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     height: "10vh",
     width: "20vw",
+  },
+  tickets: {
+    background: "#FA9232",
+    borderRadius: "10px",
+    width: "20%",
+    height: "10%",
+    "&:hover, &.Mui-focusVisible": {
+      transition: "0.3s",
+      color: "#000000",
+      backgroundColor: "#FFB800",
+    },
+  },
+  buttons: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+  },
+  rootTwo: {
+    paddingTop: "10%",
+  },
+  media: {
+    height: 140,
   },
 }));
 
@@ -108,16 +128,189 @@ export default function Home() {
           <Typography className={classes.intro} variant="h2">
             Book your travel flights now!
           </Typography>
-          <Button className={classes.button}>Get Started</Button>
+
+          <div className={classes.buttons}>
+            <Button className={classes.tickets}>Buy Tickets</Button>
+            <CovidInfo className={classes.covid} />
+          </div>
         </Grid>
         <Grid item>
           <img src={Airplane} alt="" className={classes.pic}></img>
         </Grid>
       </Grid>
       <div className={classes.rootTwo}>
-        <Grid container>
-          <Grid item>
-            <h2>HELLO, THIS IS CONTAINER TWO</h2>
+        <Grid
+          container
+          direction="row"
+          justify="space-around"
+          alignItems="center"
+        >
+          <Grid item xs={3} className={classes.rowOne}>
+            <Card className={classes.root}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={Hollywood}
+                  title="Contemplative Reptile"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h4" component="h2">
+                    Los Angeles
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    Lizards are a widespread group of squamate reptiles, with
+                    over 6,000 species, ranging across all continents except
+                    Antarctica
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Share
+                </Button>
+                <Button size="small" color="primary">
+                  Learn More
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={3} className={classes.rowTwo}>
+            <Card className={classes.root}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image="/static/images/cards/contemplative-reptile.jpg"
+                  title="Contemplative Reptile"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h4" component="h2">
+                    New York City
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    Lizards are a widespread group of squamate reptiles, with
+                    over 6,000 species, ranging across all continents except
+                    Antarctica
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Share
+                </Button>
+                <Button size="small" color="primary">
+                  Learn More
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={3}>
+            <Card className={classes.root}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image="/static/images/cards/contemplative-reptile.jpg"
+                  title="Contemplative Reptile"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h4" component="h2">
+                    Chicago
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    Lizards are a widespread group of squamate reptiles, with
+                    over 6,000 species, ranging across all continents except
+                    Antarctica
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Share
+                </Button>
+                <Button size="small" color="primary">
+                  Learn More
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+        </Grid>
+        <Grid container direction="row" justify="center" alignItems="center">
+          <Grid item xs={12} sm={6}>
+            <Card className={classes.root}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image="/static/images/cards/contemplative-reptile.jpg"
+                  title="Contemplative Reptile"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h4" component="h2">
+                    Chicago
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    Lizards are a widespread group of squamate reptiles, with
+                    over 6,000 species, ranging across all continents except
+                    Antarctica
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Share
+                </Button>
+                <Button size="small" color="primary">
+                  Learn More
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Card className={classes.root}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image="/static/images/cards/contemplative-reptile.jpg"
+                  title="Contemplative Reptile"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h4" component="h2">
+                    Chicago
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    Lizards are a widespread group of squamate reptiles, with
+                    over 6,000 species, ranging across all continents except
+                    Antarctica
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Share
+                </Button>
+                <Button size="small" color="primary">
+                  Learn More
+                </Button>
+              </CardActions>
+            </Card>
           </Grid>
         </Grid>
       </div>
