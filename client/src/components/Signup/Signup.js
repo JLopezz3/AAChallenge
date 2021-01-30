@@ -18,7 +18,7 @@ function Copyright() {
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
         <Link color="inherit" href="https://material-ui.com/">
-            Your Website
+            MXER
         </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -44,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
     submit: {
         margin: theme.spacing(3, 0, 2),
     },
+    textField: {
+
+    }
 }));
 
 export default function SignUp() {
@@ -86,6 +89,75 @@ export default function SignUp() {
                     </Grid>
                     <Grid item xs={12}>
                     <TextField
+                        id="date"
+                        label="Birthday"
+                        type="date"
+                        className={classes.textField}
+                        InputLabelProps={{
+                        shrink: true,
+                        }}
+                    />
+                    </Grid>
+
+
+                    <Grid item xs={12}>
+                    <TextField
+                        variant="outlined"
+                        required
+                        fullWidth
+                        id="address1"
+                        label="Address1"
+                        name="address1"
+                        autoComplete="address"
+                    />
+                    </Grid>
+                    <Grid item xs={12}>
+                    <TextField
+                        variant="outlined"
+                        fullWidth
+                        id="address2"
+                        label="Address2"
+                        name="address2"
+                        autoComplete="address"
+                    />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                    <TextField
+                        variant="outlined"
+                        required
+                        fullWidth
+                        id="city"
+                        label="City"
+                        name="city"
+                        autoComplete="city"
+                    />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                    <TextField
+                        variant="outlined"
+                        required
+                        fullWidth
+                        id="state"
+                        label="State"
+                        name="state"
+                        autoComplete="state"
+                    />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                    <TextField
+                        variant="outlined"
+                        required
+                        fullWidth
+                        id="postal"
+                        label="Postal Code"
+                        name="postal"
+                        autoComplete="postal"
+                    />
+                    </Grid>
+
+
+                    <Grid item xs={12}>
+                    <TextField
                         variant="outlined"
                         required
                         fullWidth
@@ -95,6 +167,19 @@ export default function SignUp() {
                         autoComplete="email"
                     />
                     </Grid>
+                    <Grid item xs={12}>
+                    <TextField
+                        variant="outlined"
+                        required
+                        fullWidth
+                        id="phone"
+                        label="Phone Number"
+                        name="phone"
+                        autoComplete="phone"
+                    />
+                    </Grid>
+
+
                     <Grid item xs={12}>
                     <TextField
                         variant="outlined"
