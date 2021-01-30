@@ -5,6 +5,7 @@ import Signup from "./components/Signup/Signup";
 import Home from "./pages/Home/Home";
 import Footer from "./components/Footer/Footer";
 import AboutUs from "./pages/AboutUs/AboutUs";
+import TicketSearch from "./pages/TicketSearch/TicketSearch";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
@@ -20,10 +21,12 @@ function App() {
             <Route path="/signup">
               <Signup />
             </Route>
+            <Route path="/search-tickets">
+              <TicketSearch />
+            </Route>
             <Route path="/about-us">
               <AboutUs />
             </Route>
-
             <Route path="/">
               <Home />
               <Footer />
