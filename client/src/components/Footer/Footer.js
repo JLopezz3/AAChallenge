@@ -8,9 +8,9 @@ import Logo from "../../assets/American_Airlines-Logo.png";
 
 function Copyright() {
   return (
-    <Typography variant="body2" style={{ color: "white", fontWeight: "bold" }}>
+    <Typography variant="body2" style={{ color: "#115798", fontWeight: "bold" }}>
       {"Copyright © "}
-      <Link color="inherit" href="http://scmatch.cs.uh.edu/">
+      <Link color="inherit" href="/">
         Jerel Lopez, Tri Nham, & Seung Jung
       </Link>{" "}
       {new Date().getFullYear()}
@@ -39,7 +39,9 @@ const useStyles = makeStyles((theme) => ({
     color: "#FFFFFF",
   },
   footerText: {
-    color: "#FFFFFF",
+    color: "#115798",
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4),
   },
   image: {
     width: "50%",
@@ -65,7 +67,14 @@ export default function Footer() {
           <Grid item xs={3}>
             <img className={classes.image} alt="" src={Logo}></img>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={2}>
+            <Link to="employee-login" href="/employee-login" style={{ textDecoration: "none" }}>
+              <Typography variant="body1" className={classes.footerText}>
+                Employee Login
+              </Typography>
+            </Link>
+          </Grid>
+          <Grid item xs={2}>
             <Link to="/about-us" href="/about-us" style={{ textDecoration: "none" }}>
               <Typography variant="body1" className={classes.footerText}>
                 About Us

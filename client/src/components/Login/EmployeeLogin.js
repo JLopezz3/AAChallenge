@@ -15,7 +15,6 @@ import Logo from "../../assets/American_Airlines-Logo.png";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -69,6 +68,37 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//   let history = useHistory();
+
+// const [loginInfo, setLoginInfo] = useState({
+//   cus_email: "",
+//   cus_password: ""
+// });
+
+// const handleChange = (e) => {
+//   setLoginInfo({
+//     ...loginInfo,
+//     [e.target.name]: e.target.value,
+//   });
+// }
+
+// const login = (e) => {
+//   e.preventDefault();
+//   axios
+//   .post("http://localhost:5000/api/v1/customerslogin")
+//   .then((res) => {
+//     if(res.data) {
+//       history.push("/search-tickets");
+//     } else {
+//       history.push("/login")
+//     }
+//   })
+//   .catch((err) => {
+//     console.log(err)
+//   })
+
+// }
+
 export default function Login() {
   const classes = useStyles();
 
@@ -93,7 +123,7 @@ export default function Login() {
         }
       })
       .catch((err) => {
-         console.log(err);
+        console.log(err);
       });
   };
 
@@ -107,7 +137,7 @@ export default function Login() {
             <img src={Logo} alt="" className={classes.logo} />
           </Link>
           <Typography component="h1" variant="h5">
-            Login
+            Employee Login
           </Typography>
           <form className={classes.form} noValidate onSubmit={login}>
             <TextField
@@ -134,10 +164,6 @@ export default function Login() {
               autoComplete="current-password"
               onChange={(e) => setCusPassword(e.target.value)}
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
             <Button
               type="submit"
               fullWidth
@@ -147,17 +173,7 @@ export default function Login() {
             >
               Sign In
             </Button>
-            <Grid container>
-              <Grid item>
-                <Link
-                  href="/signup"
-                  variant="body2"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
+
             <Box mt={5}>
               <Copyright />
             </Box>

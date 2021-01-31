@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
 
 // Destructure props
 const Confirm = ({ handleNext, handleBack, values }) => {
-  const { first_name, last_name, contact_email} = values;
+  const { customer_firstname, customer_lastname, street, city, state, zipcode} = values;
 
   //   const handleSubmit = () => {
   //     axios
@@ -93,13 +93,13 @@ const Confirm = ({ handleNext, handleBack, values }) => {
               <Grid item xs={12}>
                 <List disablePadding>
                   <ListItem>
-                    <ListItemText primary="First Name" secondary={first_name} />
+                    <ListItemText primary="First Name" secondary={customer_firstname} />
                   </ListItem>
 
                   <Divider />
 
                   <ListItem>
-                    <ListItemText primary="Last Name" secondary={last_name} />
+                    <ListItemText primary="Last Name" secondary={customer_lastname} />
                   </ListItem>
 
                   <Divider />
@@ -107,35 +107,30 @@ const Confirm = ({ handleNext, handleBack, values }) => {
                   <ListItem>
                     <ListItemText
                       primary="Address Line 1"
-                      secondary={contact_email}
+                      secondary={street}
                     />
                   </ListItem>
 
                   <Divider />
                   <ListItem>
-                    <ListItemText primary="City" secondary={contact_email} />
+                    <ListItemText primary="City" secondary={city} />
                   </ListItem>
 
                   <Divider />
                   <ListItem>
-                    <ListItemText primary="State" secondary={contact_email} />
+                    <ListItemText primary="State" secondary={state} />
                   </ListItem>
 
                   <Divider />
                   <ListItem>
-                    <ListItemText primary="Zip" secondary={contact_email} />
-                  </ListItem>
-
-                  <Divider />
-                  <ListItem>
-                    <ListItemText primary="Country" secondary={contact_email} />
+                    <ListItemText primary="Zip" secondary={zipcode} />
                   </ListItem>
 
                   <Divider />
                   <ListItem>
                     <ListItemText
                       primary="Name on Card"
-                      secondary={contact_email}
+                    //   secondary={contact_email}
                     />
                   </ListItem>
 
@@ -143,7 +138,7 @@ const Confirm = ({ handleNext, handleBack, values }) => {
                   <ListItem>
                     <ListItemText
                       primary="Card Number"
-                      secondary={contact_email}
+                    //   secondary={contact_email}
                     />
                   </ListItem>
 
@@ -151,13 +146,13 @@ const Confirm = ({ handleNext, handleBack, values }) => {
                   <ListItem>
                     <ListItemText
                       primary="Expiry Date"
-                      secondary={contact_email}
+                    //   secondary={contact_email}
                     />
                   </ListItem>
 
                   <Divider />
                   <ListItem>
-                    <ListItemText primary="CVV" secondary={contact_email} />
+                    <ListItemText primary="CVV"  />
                   </ListItem>
 
                   <Divider />

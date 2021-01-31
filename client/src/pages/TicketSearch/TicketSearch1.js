@@ -5,8 +5,6 @@ import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 const useStyles = makeStyles((theme) => ({
   layout: {
     width: "auto",
@@ -58,11 +56,18 @@ const FirstStep = ({
   handleNext,
   handleBack,
   handleChange,
-  values: { issue_summary },
+  values: {
+    customer_firstname,
+    customer_lastname,
+    street,
+    city,
+    state,
+    zipcode,
+  },
   formErrors,
 }) => {
   // Check if all values are not empty or if there are some error
-//   const isValid = issue_summary.length > 0 && !formErrors.issue_summary;
+  //   const isValid = issue_summary.length > 0 && !formErrors.issue_summary;
 
   const classes = useStyles();
 
@@ -76,39 +81,36 @@ const FirstStep = ({
                 <TextField
                   required
                   id="firstName"
-                  name="firstName"
+                  name="customer_firstname"
                   label="First name"
                   fullWidth
                   autoComplete="given-name"
+                  value={customer_firstname || ""}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
                   required
                   id="lastName"
-                  name="lastName"
+                  name="customer_lastname"
                   label="Last name"
                   fullWidth
                   autoComplete="family-name"
+                  value={customer_lastname || ""}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
                   id="address1"
-                  name="address1"
+                  name="street"
                   label="Address line 1"
                   fullWidth
                   autoComplete="shipping address-line1"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  id="address2"
-                  name="address2"
-                  label="Address line 2"
-                  fullWidth
-                  autoComplete="shipping address-line2"
+                  value={street || ""}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -119,6 +121,8 @@ const FirstStep = ({
                   label="City"
                   fullWidth
                   autoComplete="shipping address-level2"
+                  value={city || ""}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -127,38 +131,20 @@ const FirstStep = ({
                   name="state"
                   label="State/Province/Region"
                   fullWidth
+                  value={state || ""}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
                   required
                   id="zip"
-                  name="zip"
+                  name="zipcode"
                   label="Zip / Postal code"
                   fullWidth
                   autoComplete="shipping postal-code"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  id="country"
-                  name="country"
-                  label="Country"
-                  fullWidth
-                  autoComplete="shipping country"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      color="secondary"
-                      name="saveAddress"
-                      value="yes"
-                    />
-                  }
-                  label="Use this address for payment details"
+                  value={zipcode}
+                  onChange={handleChange}
                 />
               </Grid>
             </Grid>
