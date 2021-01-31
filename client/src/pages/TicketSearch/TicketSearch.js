@@ -21,6 +21,10 @@ export default function ReportBug() {
     city: "",
     state: "",
     zipcode: "",
+    full_name: "",
+    card_number: "",
+    exp_month: "",
+    exp_year: "",
   };
 
   const fieldsValidation = {
@@ -43,23 +47,43 @@ export default function ReportBug() {
     },
     city: {
       error: "",
-      validate: "",
+      validate: "text",
       maxLength: 25,
     },
     street: {
       error: "",
-      validate: "",
+      validate: "text",
       maxLength: 40,
     },
     state: {
       error: "",
-      validate: "",
+      validate: "text",
       maxLength: 2,
     },
     zipcode: {
       error: "",
       validate: "",
       maxLength: 5,
+    },
+    full_name: {
+      error: "",
+      validate: "text",
+      maxLength: 20,
+    },
+    card_number: {
+      error: "",
+      validate: "",
+      maxLength: 16,
+    },
+    exp_month: {
+      error: "",
+      validate: "",
+      maxLength: 2,
+    },
+    exp_year: {
+      error: "",
+      validate: "",
+      maxLength: 2,
     },
   };
 
