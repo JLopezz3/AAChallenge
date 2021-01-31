@@ -282,7 +282,102 @@ app.post("/api/v1/createbooking", async (req, res) => {
           }
         });
 
-//create 
+app.post("/api/v1/createbooking", async (req, res) => {
+  console.log(req.body);  
+    const fli_id = req.body.fli_id;
+    const customer_id = req.body.customer_id;
+    const total_cost = req.body.total_cost;
+    const fare_id = req.body.fare_id;
+  try{
+
+      const buyticket = await db.query(
+          "INSERT INTO heroku_0685896544e70c1.bookings (fli_id, customer_id, book_date, total_cost, fare_id) VALUES (?, ?, NOW(), ?, ?);",
+          [fli_id, customer_id, total_cost, fare_id],
+          (err, results) =>{
+            if (err) {
+              res.status(200).json({
+                status: "can not create booking",
+                data: results,
+              });
+              console.log({ message: "not found" });
+            };
+            console.log(results);
+            
+          }
+          
+          
+          );
+          const customer_last_inserted =  await db.query(
+            "select * from `heroku_0685896544e70c1`.`bookings` where book_ref=LAST_INSERT_ID();",
+  
+            (err, results) =>{
+              if (err) throw err;
+              console.log(results);
+              res.status(200).json({
+                status: "success",
+                data: results,
+              });
+            }
+            );
+        } catch (err) {
+          console.log(err);
+          }
+        });
+//create tickets
+app.post("/api/v1/createticket", async (req, res) => {
+  console.log(req.body);  
+    const fli_id = req.body.fli_id;
+    const customer_id = req.body.customer_id;
+    const total_cost = req.body.total_cost;
+    const fare_id = req.body.fare_id;
+  try{
+
+      const buyticket = await db.query(
+          "INSERT INTO `heroku_0685896544e70c1`.`ticket` (, `baggage_claim_number`, `book_ref`, `fare_id`, `taxes`) VALUES ('1234567', '123456', '3000001', '2011', '8.25');",
+          [fli_id, customer_id, total_cost, fare_id],
+          (err, results) =>{
+            if (err) {
+              res.status(200).json({
+                status: "can not create booking",
+                data: results,
+              });
+              console.log({ message: "not found" });
+            };
+            console.log(results);
+            
+          }
+          
+          
+          );
+          const customer_last_inserted =  await db.query(
+            "select * from `heroku_0685896544e70c1`.`bookings` where book_ref=LAST_INSERT_ID();",
+  
+            (err, results) =>{
+              if (err) throw err;
+              console.log(results);
+              res.status(200).json({
+                status: "success",
+                data: results,
+              });
+            }
+            );
+        } catch (err) {
+          console.log(err);
+          }
+        });
+
+        //get all flights
+app.get("/api/v1/getallflights", (req, res) => {
+  const sql = "SELECT * FROM heroku_0685896544e70c1.flight;";
+  const query = db.query(sql, (err, results) => {
+    if (err) throw err;
+    console.log(results);
+    res.status(200).json({
+      status: "yessire",
+      results,
+    });
+  });
+});
 app.listen(5000, () => {
   console.log("SERVER RUNNING ON PORT 5000!");
 });
