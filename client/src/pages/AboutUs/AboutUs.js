@@ -49,17 +49,21 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px",
     padding: "20px",
     width: "50rem",
+    marginLeft: "350px",
 
   },
   content: {
     flex: "1 0 auto",
+    marginLeft: "300px",
+    textAlign: "center",
   },
+
   cover: {
     minHeight: 256,
     minWidth: 256,
   },
   icon: {
-    height: "50%",
+    height: "30%",
   },
 }));
 
