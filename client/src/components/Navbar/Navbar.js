@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Toolbar } from "@material-ui/core";
 
 import Logo from "../../assets/American_Airlines-Logo.png";
 
@@ -18,14 +18,13 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     margin: "0",
-    color: "black"
+    color: "black",
   },
   title: {
     color: "lightgray",
     flexGrow: 1,
     display: "flex-end",
     flexDirection: "flex-end",
-    
   },
   logo: {
     backgroundRepeat: "no-repeat",
@@ -49,9 +48,6 @@ export default function Navbar() {
           >
             <img src={Logo} alt="" className={classes.logo}></img>
           </Link>
-          <Typography className={classes.greeting}>
-            You are logged in as:
-          </Typography>
         </Toolbar>
       </AppBar>
     </div>

@@ -11,18 +11,20 @@ import Warning from "../../assets/warning.mp4";
 import MaskVideo from "../../assets/maskvideo.mp4";
 import NegativeTest from "../../assets/NegativeTest.mp4";
 
+import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
+
 const useStyles = makeStyles((theme) => ({
   button: {
     color: "#202020",
     background: "#FA9232",
-    fontFamily: "Bungee Inline",
+    fontFamily: "Oswald",
     "&:hover, &.Mui-focusVisible": {
       transition: "0.3s",
       color: "#000000",
       backgroundColor: "#FFB800",
     },
     borderRadius: 10,
-    width: "10vw",
+    width: "12rem",
     margin: theme.spacing(1),
   },
 }));
@@ -55,8 +57,8 @@ const AutoRotatingCarouselModal = ({ handleOpen, setHandleOpen, isMobile }) => {
         />
         <Slide
           media={<video alt="" src={NegativeTest} autoPlay />}
-          mediaBackgroundStyle={{ backgroundColor: green[400] }}
-          style={{ backgroundColor: green[600] }}
+          mediaBackgroundStyle={{ backgroundColor: "#00678c" }}
+          style={{ backgroundColor: "#00445c" }}
           title="Negative Covid Test required to board flight"
           subtitle="Passengers must test negative maximum of 72hrs prior to flight"
         />
@@ -75,7 +77,7 @@ export default function CovidInfo() {
   return (
     <div>
       <Button className={classes.button} onClick={handleClick}>
-        Covid-19 Info
+        Covid-19 Info <ErrorOutlineIcon />
       </Button>
       <AutoRotatingCarouselModal
         isMobile={matches}

@@ -13,34 +13,53 @@ export default function ReportBug() {
   const labels = ["Passenger Info", "Payment Info", "Review Booking"];
 
   const initialValues = {
-    first_name: "",
-    last_name: "",
-    contact_email: "",
-    issue_summary: "",
+    cus_email: "",
+    cus_password: "",
+    customer_firstname: "",
+    customer_lastname: "",
+    street: "",
+    city: "",
+    state: "",
+    zipcode: "",
   };
 
   const fieldsValidation = {
-    first_name: {
-      error: "",
-      validate: "text",
-      minLength: 2,
-      maxLength: 25,
-    },
-    last_name: {
-      error: "",
-      validate: "text",
-      minLength: 2,
-      maxLength: 25,
-    },
-    contact_email: {
+    cus_email: {
       error: "",
       validate: "contact_email",
       maxLength: 50,
     },
-    issue_summary: {
+    customer_firstname: {
+      error: "",
+      validate: "text",
+      minLength: 2,
+      maxLength: 25,
+    },
+    customer_lastname: {
+      error: "",
+      validate: "text",
+      minLength: 2,
+      maxLength: 25,
+    },
+    city: {
       error: "",
       validate: "",
-      maxLength: 750,
+      maxLength: 25,
+    },
+    street: {
+      error: "",
+      validate: "",
+      maxLength: 40,
+    },
+    state: {
+      error: "",
+      validate: "",
+      maxLength: 2,
+    },
+    zipcode: {
+      error: "",
+      validate: "",
+      maxLength: 5,
     },
   };
 

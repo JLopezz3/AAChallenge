@@ -28,6 +28,8 @@ import Houston from "../../assets/Houston.jpg";
 import Miami from "../../assets/Miami.jpg";
 import Washington from "../../assets/Washington.jpg";
 
+import FlightTakeoffIcon from "@material-ui/icons/FlightTakeoff";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -40,14 +42,14 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    fontFamily: "Oleo Script",
+    fontFamily: "Oswald",
     textShadow: "10px 10px 10px #000000",
   },
   logIn: {
     flexGrow: 1,
     color: "#FFFFFF",
     background: "#07A1DA",
-    fontFamily: "Oleo Script",
+    fontFamily: "Oswald",
     "&:hover, &.Mui-focusVisible": {
       transition: "0.3s",
       color: "#FFFFFF",
@@ -58,11 +60,10 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   intro: {
-    fontFamily: "Oleo Script",
+    fontFamily: "Oswald",
     background: "transparent",
     boxShadow: "none",
     flexGrow: 1,
-    textShadow: "10px 10px 10px #000000",
     color: "#000000",
     display: "flex",
     justifyContent: "flex",
@@ -93,6 +94,7 @@ const useStyles = makeStyles((theme) => ({
       color: "#000000",
       backgroundColor: "#FFB800",
     },
+    fontFamily: "Oswald"
   },
   buttons: {
     display: "flex",
@@ -106,6 +108,10 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 140,
   },
+  rowTwoGrid: {
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4)
+  }
 }));
 
 export default function Home() {
@@ -136,7 +142,7 @@ export default function Home() {
 
           <div className={classes.buttons}>
           <Link href="/search-tickets" style={{textDecoration: "none"}}>
-          <Button className={classes.tickets} style={{width: "150%"}}>Buy Tickets</Button>
+          <Button className={classes.tickets} style={{width: "150%"}}>Buy Tickets <FlightTakeoffIcon /></Button>
           </Link>
             <CovidInfo className={classes.covid} />
           </div>
@@ -243,8 +249,9 @@ export default function Home() {
           direction="row"
           justify="space-around"
           alignItems="center"
+          className={classes.rowTwoGrid}
         >
-          <Grid item xs={3} className={classes.rowOne}>
+          <Grid item xs={3} className={classes.rowTwo}>
             <Card className={classes.root}>
               <CardActionArea>
                 <CardMedia
