@@ -17,7 +17,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit" href="/">
         Jerel Lopez, Tri Nham, & Seung Jung
       </Link>{" "}
       {new Date().getFullYear()}
@@ -66,37 +66,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-//   let history = useHistory();
-
-// const [loginInfo, setLoginInfo] = useState({
-//   cus_email: "",
-//   cus_password: ""
-// });
-
-// const handleChange = (e) => {
-//   setLoginInfo({
-//     ...loginInfo,
-//     [e.target.name]: e.target.value,
-//   });
-// }
-
-// const login = (e) => {
-//   e.preventDefault();
-//   axios
-//   .post("http://localhost:5000/api/v1/customerslogin")
-//   .then((res) => {
-//     if(res.data) {
-//       history.push("/search-tickets");
-//     } else {
-//       history.push("/login")
-//     }
-//   })
-//   .catch((err) => {
-//     console.log(err)
-//   })
-
-// }
-
 export default function Login() {
   const classes = useStyles();
 
@@ -108,10 +77,13 @@ export default function Login() {
   const login = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/v1/customerslogin", {
-        cus_email: cus_email,
-        cus_password: cus_password,
-      })
+      .post(
+        "https://american-airlines-challenge.herokuapp.com/api/v1/customerslogin",
+        {
+          cus_email: cus_email,
+          cus_password: cus_password,
+        }
+      )
       .then((res) => {
         if (res.data) {
           history.push("/employee");
@@ -131,7 +103,7 @@ export default function Login() {
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
-          <Link href="/home">
+          <Link href="https://american-airlines-challenge.herokuapp.com/">
             <img src={Logo} alt="" className={classes.logo} />
           </Link>
           <Typography component="h1" variant="h5">

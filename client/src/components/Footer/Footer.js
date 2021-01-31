@@ -8,9 +8,15 @@ import Logo from "../../assets/American_Airlines-Logo.png";
 
 function Copyright() {
   return (
-    <Typography variant="body2" style={{ color: "#115798", fontWeight: "bold" }}>
+    <Typography
+      variant="body2"
+      style={{ color: "#115798", fontWeight: "bold" }}
+    >
       {"Copyright © "}
-      <Link color="inherit" href="/">
+      <Link
+        color="inherit"
+        href="https://american-airlines-challenge.herokuapp.com/"
+      >
         Jerel Lopez, Tri Nham, & Seung Jung
       </Link>{" "}
       {new Date().getFullYear()}
@@ -68,14 +74,20 @@ export default function Footer() {
             <img className={classes.image} alt="" src={Logo}></img>
           </Grid>
           <Grid item xs={2}>
-            <Link to="employee-login" href="/employee-login" style={{ textDecoration: "none" }}>
+            <Link
+              href="https://american-airlines-challenge.herokuapp.com/employee-login"
+              style={{ textDecoration: "none" }}
+            >
               <Typography variant="body1" className={classes.footerText}>
                 Employee Login
               </Typography>
             </Link>
           </Grid>
           <Grid item xs={2}>
-            <Link to="/about-us" href="/about-us" style={{ textDecoration: "none" }}>
+            <Link
+              href="https://american-airlines-challenge.herokuapp.com/about-us"
+              style={{ textDecoration: "none" }}
+            >
               <Typography variant="body1" className={classes.footerText}>
                 About Us
               </Typography>

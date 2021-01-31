@@ -108,7 +108,7 @@ function Home() {
   const booking = (e) => {
     e.preventDefault();
     axios
-      .get("http://localhost:5000/api/v1/search", {
+      .get("https://american-airlines-challenge.herokuapp.com/api/v1/search", {
         departure_airport: departure_airport,
         arrival_airport: arrival_airport,
       })

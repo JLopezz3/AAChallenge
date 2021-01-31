@@ -3,6 +3,7 @@ const app = express();
 const db = require("./db/db");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const PORT = 5000;
 
 app.get("/", (req, res) => {
   res.send("Hello world!");
@@ -421,7 +422,7 @@ app.post("/api/v1/customerpayment", async (req, res) => {
         });
 
 
-app.listen(5000, () => {
-  console.log("SERVER RUNNING ON PORT 5000!");
+app.listen(process.env.PORT || PORT, () => {
+  console.log(`SERVER RUNNING ON PORT ${5000}`);
 });
 

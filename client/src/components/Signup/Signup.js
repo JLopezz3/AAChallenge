@@ -18,14 +18,14 @@ import { useHistory } from "react-router-dom";
 
 function Copyright() {
     return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-        <Link color="inherit" href="https://material-ui.com/">
-            Jerel Lopez, Tri Nham, & Seung Jung
-        </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
+      <Typography variant="body2" color="textSecondary" align="center">
+        {"Copyright © "}
+        <Link color="inherit" href="https://github.com/JLopezz3/AAChallenge">
+          Jerel Lopez, Tri Nham, & Seung Jung
+        </Link>{" "}
+        {new Date().getFullYear()}
+        {"."}
+      </Typography>
     );
 }
 
@@ -73,18 +73,21 @@ export default function SignUp() {
      const signup = (e) => {
        e.preventDefault();
        axios
-         .post("http://localhost:5000/api/v1/createcustomer", {
-           cus_email: cus_email,
-           cus_password: cus_password,
-           customer_firstname: customer_firstname,
-           customer_lastname: customer_lastname,
-           phone: phone,
-           street: street,
-           city: city,
-           state: state,
-           dob: dob,
-           zipcode: zipcode,
-         })
+         .post(
+           "https://american-airlines-challenge.herokuapp.com/api/v1/createcustomer",
+           {
+             cus_email: cus_email,
+             cus_password: cus_password,
+             customer_firstname: customer_firstname,
+             customer_lastname: customer_lastname,
+             phone: phone,
+             street: street,
+             city: city,
+             state: state,
+             dob: dob,
+             zipcode: zipcode,
+           }
+         )
          .then((res) => {
            if (res.data) {
              history.push("/search-tickets");
@@ -94,8 +97,7 @@ export default function SignUp() {
            }
          })
          .catch((err) => {
-            console.log(err);
-
+           console.log(err);
          });
      };
 
@@ -104,7 +106,7 @@ export default function SignUp() {
       <Container component="main" maxWidth="lg">
         <CssBaseline />
         <div className={classes.paper}>
-          <Link href="/home">
+          <Link href="/">
             <img src={Logo} alt="" className={classes.logo} />
           </Link>
           <Typography component="h1" variant="h5">
@@ -271,7 +273,7 @@ export default function SignUp() {
             <Grid container justify="flex-end">
               <Grid item>
                 <Link
-                  href="/login"
+                  href="https://american-airlines-challenge.herokuapp.com/login"
                   variant="body2"
                   style={{ textDecoration: "none", color: "black" }}
                 >

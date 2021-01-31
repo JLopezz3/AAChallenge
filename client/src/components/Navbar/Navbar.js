@@ -42,7 +42,7 @@ export default function Navbar() {
       <AppBar className={classes.appBar} position="static">
         <Toolbar variant="dense">
           <Link
-            to="/"
+            to="https://american-airlines-challenge.herokuapp.com/"
             className={classes.links}
             style={{ textDecoration: "none" }}
           >

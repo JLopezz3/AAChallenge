@@ -73,7 +73,10 @@ const Confirm = ({ handleNext, handleBack, values }) => {
 
     const handleSubmit = () => {
       axios
-        .post("http://localhost:5000/api/v1/customerpayment", values)
+        .post(
+          "https://american-airlines-challenge.herokuapp.com/api/v1/customerpayment",
+          values
+        )
         .then((res) => {
           console.log(values);
           handleNext();

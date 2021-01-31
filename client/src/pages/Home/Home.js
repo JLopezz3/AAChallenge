@@ -128,13 +128,16 @@ export default function Home() {
           <Toolbar>
             <Typography variant="h4" className={classes.title}>
               <Link
-                href="/"
+                href="https://american-airlines-challenge.herokuapp.com/"
                 style={{ textDecoration: "none", color: "#FA9232" }}
               >
                 <img src={Logo} alt="" className={classes.logo}></img>
               </Link>
             </Typography>
-            <Link href="/login" style={{ textDecoration: "none" }}>
+            <Link
+              href="https://american-airlines-challenge.herokuapp.com/login"
+              style={{ textDecoration: "none" }}
+            >
               <Button className={classes.logIn}>Login</Button>
             </Link>
           </Toolbar>
@@ -145,7 +148,10 @@ export default function Home() {
           </Typography>
 
           <div className={classes.buttons}>
-            <Link href="/search-tickets" style={{ textDecoration: "none" }}>
+            <Link
+              href="https://american-airlines-challenge.herokuapp.com/search-tickets"
+              style={{ textDecoration: "none" }}
+            >
               <Button className={classes.tickets} style={{ width: "150%" }}>
                 Buy Tickets <FlightTakeoffIcon />
               </Button>
@@ -192,7 +198,7 @@ export default function Home() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Link href="/search-tickets">
+                <Link href="https://american-airlines-challenge.herokuapp.com/search-tickets">
                   <Button size="small" color="primary">
                     Book to Los Angeles
                   </Button>
@@ -228,7 +234,7 @@ export default function Home() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Link href="/search-tickets">
+                <Link href="https://american-airlines-challenge.herokuapp.com/search-tickets">
                   <Button size="small" color="primary">
                     Book to New York
                   </Button>
@@ -264,7 +270,7 @@ export default function Home() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Link href="/search-tickets">
+                <Link href="https://american-airlines-challenge.herokuapp.com/search-tickets">
                   <Button size="small" color="primary">
                     Book to Chicago
                   </Button>
@@ -309,7 +315,7 @@ export default function Home() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Link href="/search-tickets">
+                <Link href="https://american-airlines-challenge.herokuapp.com/search-tickets">
                   <Button size="small" color="primary">
                     Book to Houston
                   </Button>
@@ -345,7 +351,7 @@ export default function Home() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Link href="/search-tickets">
+                <Link href="https://american-airlines-challenge.herokuapp.com/search-tickets">
                   <Button size="small" color="primary">
                     Book to Miami
                   </Button>
@@ -382,7 +388,7 @@ export default function Home() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Link href="/search-tickets">
+                <Link href="https://american-airlines-challenge.herokuapp.com/search-tickets">
                   <Button size="small" color="primary">
                     Book to Washington D.C.
                   </Button>
