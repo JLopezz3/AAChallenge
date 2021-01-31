@@ -114,7 +114,7 @@ export default function Login() {
       })
       .then((res) => {
         if (res.data) {
-          history.push("/search-tickets");
+          history.push("/employee");
           console.log(res.data);
         } else {
           history.push("/login");
