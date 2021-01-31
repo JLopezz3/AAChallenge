@@ -378,6 +378,50 @@ app.get("/api/v1/getallflights", (req, res) => {
     });
   });
 });
+
+// add payment
+app.post("/api/v1/customerpayment", async (req, res) => {
+  console.log(req.body);  
+    const cus_id = req.body.cus_id;
+    const full_name = req.body.full_name;
+    const card_number = req.body.card_number;
+    const exp_month = req.body.exp_month;
+    const exp_year = req.body.exp_year;
+
+    const customer_firstname = req.body.customer_firstname;
+    const customer_lastname = req.body.customer_lastname;
+    const street = req.body.street;
+    const city = req.body.city;
+    const state = req.body.state;
+    const zipcode = req.body.zipcode;
+
+  try{
+
+      const payment = await db.query(
+          "INSERT INTO heroku_0685896544e70c1.cus_payment ( full_name, card_number, exp_month, exp_year, customer_firstname, customer_lastname, street, city, state, zipcode) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);          ",
+          [full_name, card_number, exp_month, exp_year, customer_firstname, customer_lastname, street, city, state, zipcode]
+          
+          
+          );
+          const paymentinserted =  await db.query(
+            "select * from heroku_0685896544e70c1.cus_payment where payment_id=LAST_INSERT_ID();",
+  
+            (err, results) =>{
+              if (err) throw err;
+              console.log(results);
+              res.status(200).json({
+                status: "success",
+                data: results,
+              });
+            }
+            );
+        } catch (err) {
+          console.log(err);
+          }
+        });
+
+
 app.listen(5000, () => {
   console.log("SERVER RUNNING ON PORT 5000!");
 });
+
