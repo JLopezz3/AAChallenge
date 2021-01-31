@@ -192,9 +192,11 @@ export default function Home() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Book to Los Angeles
-                </Button>
+                <Link href="/search-tickets">
+                  <Button size="small" color="primary">
+                    Book to Los Angeles
+                  </Button>
+                </Link>
               </CardActions>
             </Card>
           </Grid>
@@ -226,9 +228,11 @@ export default function Home() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Book to New York
-                </Button>
+                <Link href="/search-tickets">
+                  <Button size="small" color="primary">
+                    Book to New York
+                  </Button>
+                </Link>
               </CardActions>
             </Card>
           </Grid>
@@ -260,9 +264,11 @@ export default function Home() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Book to Chicago
-                </Button>
+                <Link href="/search-tickets">
+                  <Button size="small" color="primary">
+                    Book to Chicago
+                  </Button>
+                </Link>
               </CardActions>
             </Card>
           </Grid>
@@ -303,9 +309,11 @@ export default function Home() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Book to Houston
-                </Button>
+                <Link href="/search-tickets">
+                  <Button size="small" color="primary">
+                    Book to Houston
+                  </Button>
+                </Link>
               </CardActions>
             </Card>
           </Grid>
@@ -337,9 +345,11 @@ export default function Home() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Book to Miami
-                </Button>
+                <Link href="/search-tickets">
+                  <Button size="small" color="primary">
+                    Book to Miami
+                  </Button>
+                </Link>
               </CardActions>
             </Card>
           </Grid>
@@ -372,9 +382,11 @@ export default function Home() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Book to Washington D.C.
-                </Button>
+                <Link href="/search-tickets">
+                  <Button size="small" color="primary">
+                    Book to Washington D.C.
+                  </Button>
+                </Link>
               </CardActions>
             </Card>
           </Grid>
