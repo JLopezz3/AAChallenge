@@ -58,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 10,
     width: 100,
     margin: theme.spacing(1),
+    letterSpacing: "2px"
   },
   intro: {
     fontFamily: "Oswald",
@@ -110,7 +111,10 @@ const useStyles = makeStyles((theme) => ({
   },
   rowTwoGrid: {
     marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(4)
+    marginBottom: theme.spacing(10)
+  },
+  cityTitles: {
+    fontFamily: "Oswald"
   }
 }));
 
@@ -141,9 +145,11 @@ export default function Home() {
           </Typography>
 
           <div className={classes.buttons}>
-          <Link href="/search-tickets" style={{textDecoration: "none"}}>
-          <Button className={classes.tickets} style={{width: "150%"}}>Buy Tickets <FlightTakeoffIcon /></Button>
-          </Link>
+            <Link href="/search-tickets" style={{ textDecoration: "none" }}>
+              <Button className={classes.tickets} style={{ width: "150%" }}>
+                Buy Tickets <FlightTakeoffIcon />
+              </Button>
+            </Link>
             <CovidInfo className={classes.covid} />
           </div>
         </Grid>
@@ -167,15 +173,21 @@ export default function Home() {
                   title="Contemplative Reptile"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h4" component="h2">
-                    Los Angeles
+                  <Typography
+                    gutterBottom
+                    variant="h4"
+                    component="h2"
+                    className={classes.cityTitles}
+                  >
+                    Los Angeles (LAX)
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    Los Angeles is a sprawling Southern California city and the center of the nation’s film and television industry.
+                    Los Angeles is a sprawling Southern California city and the
+                    center of the nation’s film and television industry.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -195,15 +207,21 @@ export default function Home() {
                   title="Contemplative Reptile"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h4" component="h2">
-                    New York City
+                  <Typography
+                    gutterBottom
+                    variant="h4"
+                    component="h2"
+                    className={classes.cityTitles}
+                  >
+                    New York City (JFK)
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean.
+                    New York City comprises 5 boroughs sitting where the Hudson
+                    River meets the Atlantic Ocean.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -223,15 +241,21 @@ export default function Home() {
                   title="Contemplative Reptile"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h4" component="h2">
-                    Chicago
+                  <Typography
+                    gutterBottom
+                    variant="h4"
+                    component="h2"
+                    className={classes.cityTitles}
+                  >
+                    Chicago (ORD)
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    Chicago, on Lake Michigan in Illinois, is among the largest cities in the U.S.
+                    Chicago, on Lake Michigan in Illinois, is among the largest
+                    cities in the U.S.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -260,21 +284,27 @@ export default function Home() {
                   title="Contemplative Reptile"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h4" component="h2">
-                    Houston
+                  <Typography
+                    gutterBottom
+                    variant="h4"
+                    component="h2"
+                    className={classes.cityTitles}
+                  >
+                    Houston (HOU)
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    Houston is a large metropolis in Texas, extending to Galveston Bay.
+                    Houston is a large metropolis in Texas, extending to
+                    Galveston Bay.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
                 <Button size="small" color="primary">
-                  Book to Chicago
+                  Book to Houston
                 </Button>
               </CardActions>
             </Card>
@@ -288,15 +318,21 @@ export default function Home() {
                   title="Contemplative Reptile"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h4" component="h2">
-                    Miami
+                  <Typography
+                    gutterBottom
+                    variant="h4"
+                    component="h2"
+                    className={classes.cityTitles}
+                  >
+                    Miami (MIA)
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    Miami, officially the City of Miami, is a metropolis located in southeastern Florida in the United States.
+                    Miami, officially the City of Miami, is a metropolis located
+                    in southeastern Florida in the United States.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -316,15 +352,22 @@ export default function Home() {
                   title="Contemplative Reptile"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h4" component="h2">
-                    Washington D.C.
+                  <Typography
+                    gutterBottom
+                    variant="h4"
+                    component="h2"
+                    className={classes.cityTitles}
+                  >
+                    Washington D.C. (WAS)
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    Washington, DC, the U.S. capital, is a compact city on the Potomac River, bordering the states of Maryland and Virginia.
+                    Washington, DC, the U.S. capital, is a compact city on the
+                    Potomac River, bordering the states of Maryland and
+                    Virginia.
                   </Typography>
                 </CardContent>
               </CardActionArea>

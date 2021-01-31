@@ -69,14 +69,7 @@ const SecondStep = ({
   values: { first_name, last_name, contact_email },
   formErrors,
 }) => {
-  // Check if all values are not empty or if there are some error
-  //   const isValid =
-  //     first_name.length > 0 &&
-  //     !formErrors.firstName &&
-  //     last_name.length > 0 &&
-  //     !formErrors.lastName &&
-  //     contact_email.length > 0 &&
-  //     !formErrors.email;
+
 
   const classes = useStyles();
   return (
@@ -86,18 +79,6 @@ const SecondStep = ({
           <Paper className={classes.paper}>
             <Grid container spacing={2} noValidate>
               <Grid item xs={12} sm={6}>
-                {/* <TextField
-                  fullWidth
-                  label="First Name"
-                  name="first_name"
-                  placeholder="Your first name"
-                  margin="normal"
-                  value={first_name || ""}
-                  onChange={handleChange}
-                  error={!!formErrors.first_name}
-                  helperText={formErrors.first_name}
-                  required
-                /> */}
                 <TextField
                   required
                   id="cardName"
@@ -107,18 +88,7 @@ const SecondStep = ({
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                {/* <TextField
-                  fullWidth
-                  label="Last Name"
-                  name="last_name"
-                  placeholder="Your last name"
-                  margin="normal"
-                  value={last_name || ""}
-                  onChange={handleChange}
-                  error={!!formErrors.last_name}
-                  helperText={formErrors.last_name}
-                  required
-                /> */}
+
                 <TextField
                   required
                   id="cardNumber"
@@ -129,19 +99,7 @@ const SecondStep = ({
               </Grid>
 
               <Grid item xs={12} sm={6}>
-                {/* <TextField
-                  fullWidth
-                  label="Email"
-                  name="contact_email"
-                  placeholder="Your email address"
-                  type="email"
-                  value={contact_email || ""}
-                  onChange={handleChange}
-                  margin="normal"
-                  error={!!formErrors.contact_email}
-                  helperText={formErrors.contact_email}
-                  required
-                /> */}
+
                 <TextField
                   required
                   id="expDate"
@@ -179,8 +137,6 @@ const SecondStep = ({
               </Button>
               <Button
                 variant="contained"
-                // disabled={!isValid}
-                // onClick={isValid ? handleNext : null}
                 onClick={handleNext}
                 className={classes.button}
               >
