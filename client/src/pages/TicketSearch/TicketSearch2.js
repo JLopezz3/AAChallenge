@@ -66,11 +66,8 @@ const SecondStep = ({
   handleBack,
   handleNext,
   handleChange,
-  values: { first_name, last_name, contact_email },
-  formErrors,
+  values: { full_name, card_number, exp_month, exp_year },
 }) => {
-
-
   const classes = useStyles();
   return (
     <>
@@ -85,37 +82,46 @@ const SecondStep = ({
                   label="Name on card"
                   fullWidth
                   autoComplete="cc-name"
+                  name="full_name"
+                  value={full_name || ""}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-
                 <TextField
                   required
                   id="cardNumber"
                   label="Card number"
                   fullWidth
+                  name="card_number"
                   autoComplete="cc-number"
+                  value={card_number || ""}
+                  onChange={handleChange}
                 />
               </Grid>
 
               <Grid item xs={12} sm={6}>
-
                 <TextField
                   required
                   id="expDate"
-                  label="Expiry date"
+                  label="Expiry month"
                   fullWidth
+                  name="exp_month"
                   autoComplete="cc-exp"
+                  value={exp_month || ""}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <TextField
                   required
                   id="cvv"
-                  label="CVV"
-                  helperText="Last three digits on signature strip"
+                  label="Expiry Year"
                   fullWidth
+                  name="exp_year"
                   autoComplete="cc-csc"
+                  value={exp_year || ""}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>

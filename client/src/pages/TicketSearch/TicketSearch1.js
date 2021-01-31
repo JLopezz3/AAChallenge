@@ -64,7 +64,7 @@ const FirstStep = ({
     state,
     zipcode,
   },
-  formErrors,
+ 
 }) => {
   // Check if all values are not empty or if there are some error
   //   const isValid = issue_summary.length > 0 && !formErrors.issue_summary;

@@ -8,7 +8,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
 
-// import axios from "axios";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   layout: {
@@ -69,19 +69,19 @@ const useStyles = makeStyles((theme) => ({
 
 // Destructure props
 const Confirm = ({ handleNext, handleBack, values }) => {
-  const { customer_firstname, customer_lastname, street, city, state, zipcode} = values;
+  const { customer_firstname, customer_lastname, street, city, state, zipcode, full_name, card_number, exp_month, exp_year} = values;
 
-  //   const handleSubmit = () => {
-  //     axios
-  //       .post("/issue_report/create", values)
-  //       .then((res) => {
-  //         console.log(values);
-  //         handleNext();
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   };
+    const handleSubmit = () => {
+      axios
+        .post("http://localhost:5000/api/v1/customerpayment", values)
+        .then((res) => {
+          console.log(values);
+          handleNext();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
 
   const classes = useStyles();
   return (
@@ -130,7 +130,7 @@ const Confirm = ({ handleNext, handleBack, values }) => {
                   <ListItem>
                     <ListItemText
                       primary="Name on Card"
-                    //   secondary={contact_email}
+                      secondary={full_name}
                     />
                   </ListItem>
 
@@ -138,21 +138,21 @@ const Confirm = ({ handleNext, handleBack, values }) => {
                   <ListItem>
                     <ListItemText
                       primary="Card Number"
-                    //   secondary={contact_email}
+                      secondary={card_number}
                     />
                   </ListItem>
 
                   <Divider />
                   <ListItem>
                     <ListItemText
-                      primary="Expiry Date"
-                    //   secondary={contact_email}
+                      primary="Expiry Month"
+                      secondary={exp_month}
                     />
                   </ListItem>
 
                   <Divider />
                   <ListItem>
-                    <ListItemText primary="CVV"  />
+                    <ListItemText primary="Expiry Year" secondary={exp_year} />
                   </ListItem>
 
                   <Divider />
@@ -169,7 +169,7 @@ const Confirm = ({ handleNext, handleBack, values }) => {
                   <Button
                     className={classes.button}
                     variant="contained"
-                    // onClick={handleSubmit}
+                    onClick={handleSubmit}
                   >
                     Confirm & Continue
                   </Button>
