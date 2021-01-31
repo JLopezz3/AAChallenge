@@ -26,6 +26,7 @@ import Newyork from "../../assets/NewYork.jpg";
 import Chicago from "../../assets/Chicago.jpg";
 import Houston from "../../assets/Houston.jpg";
 import Miami from "../../assets/Miami.jpg";
+import Washington from "../../assets/Washington.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -168,16 +169,13 @@ export default function Home() {
                     color="textSecondary"
                     component="p"
                   >
-                    Los Angeles is a sprawling Southern California city and the center of the nation’s film and television industry. Near its iconic Hollywood sign, studios such as Paramount Pictures, Universal and Warner Brothers offer behind-the-scenes tours.
+                    Los Angeles is a sprawling Southern California city and the center of the nation’s film and television industry.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
                 <Button size="small" color="primary">
-                  Share
-                </Button>
-                <Button size="small" color="primary">
-                  Learn More
+                  Book to Los Angeles
                 </Button>
               </CardActions>
             </Card>
@@ -199,16 +197,13 @@ export default function Home() {
                     color="textSecondary"
                     component="p"
                   >
-                    New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers.
+                    New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
                 <Button size="small" color="primary">
-                  Share
-                </Button>
-                <Button size="small" color="primary">
-                  Learn More
+                  Book to New York
                 </Button>
               </CardActions>
             </Card>
@@ -230,23 +225,26 @@ export default function Home() {
                     color="textSecondary"
                     component="p"
                   >
-                    Chicago, on Lake Michigan in Illinois, is among the largest cities in the U.S. Famed for its bold architecture, it has a skyline punctuated by skyscrapers such as the iconic John Hancock Center, 1,451-ft. Willis Tower (formerly the Sears Tower) and the neo-Gothic Tribune Tower.
+                    Chicago, on Lake Michigan in Illinois, is among the largest cities in the U.S.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
                 <Button size="small" color="primary">
-                  Share
-                </Button>
-                <Button size="small" color="primary">
-                  Learn More
+                  Book to Chicago
                 </Button>
               </CardActions>
             </Card>
           </Grid>
         </Grid>
-        <Grid container direction="row" justify="center" alignItems="center">
-          <Grid item xs={3}>
+
+        <Grid
+          container
+          direction="row"
+          justify="space-around"
+          alignItems="center"
+        >
+          <Grid item xs={3} className={classes.rowOne}>
             <Card className={classes.root}>
               <CardActionArea>
                 <CardMedia
@@ -263,21 +261,18 @@ export default function Home() {
                     color="textSecondary"
                     component="p"
                   >
-                    Houston is a large metropolis in Texas, extending to Galveston Bay. It’s closely linked with the Space Center Houston, the coastal visitor center at NASA’s astronaut training and flight control complex.
+                    Houston is a large metropolis in Texas, extending to Galveston Bay.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
                 <Button size="small" color="primary">
-                  Share
-                </Button>
-                <Button size="small" color="primary">
-                  Learn More
+                  Book to Chicago
                 </Button>
               </CardActions>
             </Card>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={3} className={classes.rowTwo}>
             <Card className={classes.root}>
               <CardActionArea>
                 <CardMedia
@@ -294,16 +289,41 @@ export default function Home() {
                     color="textSecondary"
                     component="p"
                   >
-                    Miami, officially the City of Miami, is a metropolis located in southeastern Florida in the United States. It is the third most populous metropolis on the East coast of the United States, and it is the seventh largest in the country.
+                    Miami, officially the City of Miami, is a metropolis located in southeastern Florida in the United States.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
                 <Button size="small" color="primary">
-                  Share
+                  Book to Miami
                 </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={3}>
+            <Card className={classes.root}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={Washington}
+                  title="Contemplative Reptile"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h4" component="h2">
+                    Washington D.C.
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    Washington, DC, the U.S. capital, is a compact city on the Potomac River, bordering the states of Maryland and Virginia.
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
                 <Button size="small" color="primary">
-                  Learn More
+                  Book to Washington D.C.
                 </Button>
               </CardActions>
             </Card>
