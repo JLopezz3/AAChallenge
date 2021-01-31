@@ -157,7 +157,7 @@ function Home() {
             <br />
             <Paper className={classes.paper}>
               <Typography className={classes.header}>
-                Enter a 3 Letter Airport Code ex) LAX or JFK
+                Search flights using the 3 Letter Airport Code ex) LAX or JFK
               </Typography>
               <TextField
                 required
