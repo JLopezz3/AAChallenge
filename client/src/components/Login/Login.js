@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
@@ -12,6 +12,10 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Logo from "../../assets/American_Airlines-Logo.png";
 
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+
+import Alert from "@material-ui/lab/Alert";
 
 function Copyright() {
   return (
@@ -31,7 +35,8 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
   },
   image: {
-    backgroundImage: "url(https://images.unsplash.com/photo-1563724576495-4bb026cc9133?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80)",
+    backgroundImage:
+      "url(https://images.unsplash.com/photo-1563724576495-4bb026cc9133?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80)",
     backgroundRepeat: "no-repeat",
     backgroundColor:
       theme.palette.type === "light"
@@ -65,8 +70,70 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//   let history = useHistory();
+
+// const [loginInfo, setLoginInfo] = useState({
+//   cus_email: "",
+//   cus_password: ""
+// });
+
+// const handleChange = (e) => {
+//   setLoginInfo({
+//     ...loginInfo,
+//     [e.target.name]: e.target.value,
+//   });
+// }
+
+// const login = (e) => {
+//   e.preventDefault();
+//   axios
+//   .post("http://localhost:5000/api/v1/customerslogin")
+//   .then((res) => {
+//     if(res.data) {
+//       history.push("/search-tickets");
+//     } else {
+//       history.push("/login")
+//     }
+//   })
+//   .catch((err) => {
+//     console.log(err)
+//   })
+
+// }
+
 export default function Login() {
   const classes = useStyles();
+
+  let history = useHistory();
+
+  const [error, setError] = useState("");
+
+  const [cus_email, setCusEmail] = useState("");
+  const [cus_password, setCusPassword] = useState("");
+
+  const login = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:5000/api/v1/customerslogin", {
+        cus_email: cus_email,
+        cus_password: cus_password,
+      })
+      .then((res) => {
+        if (res.data) {
+          history.push("/search-tickets");
+          console.log(res.data);
+        } else {
+          history.push("/login");
+        }
+      })
+      .catch((err) => {
+        //  console.log(err);
+        setError(
+          err.response.data.detail +
+            ". Make sure your email and password is correct."
+        );
+      });
+  };
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -74,13 +141,22 @@ export default function Login() {
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
+          {error ? (
+            <Alert
+              className={classes.loginAlert}
+              variant="filled"
+              severity="error"
+            >
+              {error}
+            </Alert>
+          ) : null}
           <Link href="/home">
             <img src={Logo} alt="" className={classes.logo} />
           </Link>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate onSubmit={login}>
             <TextField
               variant="outlined"
               margin="normal"
@@ -91,6 +167,7 @@ export default function Login() {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={(e) => setCusEmail(e.target.value)}
             />
             <TextField
               variant="outlined"
@@ -102,6 +179,7 @@ export default function Login() {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={(e) => setCusPassword(e.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -118,7 +196,11 @@ export default function Login() {
             </Button>
             <Grid container>
               <Grid item>
-                <Link href="/signup" variant="body2" style={{textDecoration: "none", color: "black"}}>
+                <Link
+                  href="/signup"
+                  variant="body2"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
